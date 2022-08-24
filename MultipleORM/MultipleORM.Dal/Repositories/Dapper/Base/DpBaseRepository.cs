@@ -1,7 +1,5 @@
-﻿using System;
-using Dapper;
+﻿using Dapper;
 using Microsoft.Data.SqlClient;
-using MultipleORM.Dal.Data.Dapper;
 using MultipleORM.Dal.Data.Dapper.Base;
 using MultipleORM.Dal.Interfaces.Entities.Base;
 using MultipleORM.Dal.Interfaces.IRepository.Base;

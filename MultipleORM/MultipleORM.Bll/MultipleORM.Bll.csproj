@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MultipleORM.Bll.Interfaces\MultipleORM.Bll.Interfaces.csproj" />
+    <ProjectReference Include="..\MultipleORM.Dal.Interfaces\MultipleORM.Dal.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>

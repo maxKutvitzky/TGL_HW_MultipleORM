@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MultipleORM.Dal.Data.Dapper.Base;
+﻿using MultipleORM.Dal.Data.Dapper.Base;
 
 namespace MultipleORM.Dal.Data.Dapper
 {

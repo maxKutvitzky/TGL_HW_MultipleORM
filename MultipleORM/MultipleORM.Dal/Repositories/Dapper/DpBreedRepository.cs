@@ -1,33 +1,14 @@
-﻿using MultipleORM.Dal.Interfaces.Entities;
+﻿using MultipleORM.Dal.Data.Dapper;
+using MultipleORM.Dal.Interfaces.Entities;
 using MultipleORM.Dal.Interfaces.IRepository;
+using MultipleORM.Dal.Repositories.Dapper.Base;
 
 namespace MultipleORM.Dal.Repositories.Dapper
 {
-    public class DpBreedRepository : IBreedRepository
+    public class DpBreedRepository : DpBaseRepository<Breed,DpBreedQueries>, IBreedRepository
     {
-        public int Add(Breed entity)
+        public DpBreedRepository(string connString) : base(connString)
         {
-            throw new NotImplementedException();
-        }
-
-        public int Update(Breed entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Delete(Breed entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Breed GetById(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Breed> GetAll()
-        {
-            throw new NotImplementedException();
         }
     }
 }

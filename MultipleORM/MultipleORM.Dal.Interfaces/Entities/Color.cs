@@ -1,5 +1,4 @@
-﻿using System.Drawing;
-using MultipleORM.Dal.Interfaces.Entities.Base;
+﻿using MultipleORM.Dal.Interfaces.Entities.Base;
 
 namespace MultipleORM.Dal.Interfaces.Entities
 {

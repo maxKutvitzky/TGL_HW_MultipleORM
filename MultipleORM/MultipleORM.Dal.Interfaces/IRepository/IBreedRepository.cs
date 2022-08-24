@@ -3,7 +3,7 @@ using MultipleORM.Dal.Interfaces.IRepository.Base;
 
 namespace MultipleORM.Dal.Interfaces.IRepository;
 
-public interface IBreedRepository:IRepository<Breed>
+public interface IBreedRepository : IRepository<Breed>
 {
     
 }
