@@ -5,5 +5,5 @@ namespace MultipleORM.Bll.Interfaces.IServices;
 
 public interface IPuppyService : IService<BllPuppy>
 {
-    
+
 }

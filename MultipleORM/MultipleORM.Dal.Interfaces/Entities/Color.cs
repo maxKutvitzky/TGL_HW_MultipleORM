@@ -1,9 +1,8 @@
 ﻿using MultipleORM.Dal.Interfaces.Entities.Base;
 
-namespace MultipleORM.Dal.Interfaces.Entities
+namespace MultipleORM.Dal.Interfaces.Entities;
+
+public class Color : EntityBase
 {
-    public class Color : EntityBase
-    {
-        public string Name { get; set; }
-    }
+    public string Name { get; set; }
 }

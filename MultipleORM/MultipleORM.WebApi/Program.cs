@@ -3,6 +3,7 @@ using MultipleORM.Bll.Interfaces.IServices;
 using MultipleORM.Bll.Services;
 using MultipleORM.Dal.Data.EntityFramework;
 using MultipleORM.Dal.Initialization;
+using MultipleORM.Dal.Interfaces.Initialization;
 using MultipleORM.Dal.Interfaces.IRepository;
 using MultipleORM.Dal.Repositories.Dapper;
 using MultipleORM.Dal.Repositories.EntityFramework;
@@ -27,6 +28,8 @@ builder.Services.AddScoped<IBreedService, BreedService>();
 
 var app = builder.Build();
 
+#region HTTP
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -41,7 +44,11 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+#endregion
+
 app.Run();
+
+#region Methods
 
 void AddEfServices(WebApplicationBuilder builder)
 {
@@ -65,7 +72,7 @@ void AddDapperServices(WebApplicationBuilder builder)
 void InitializeDataBase()
 {
     int puppiesCount = app.Configuration.GetValue<int>("PuppiesRecordsCount");
-    EfDbInitializer initializer = new EfDbInitializer(puppiesCount,
+    IDbInitialization initializer = new EfDbInitializer(puppiesCount,
         new PuppyDbContext(new DbContextOptionsBuilder<PuppyDbContext>()
             .UseSqlServer(connectionString)
             .Options));
@@ -93,7 +100,7 @@ void SetDataProvider(WebApplicationBuilder webApplicationBuilder)
         AddDapperServices(webApplicationBuilder);
         return;
     }
-    
+
     string GetProviderName()
     {
         var json = webApplicationBuilder.Configuration.GetSection("DataProvider").GetChildren();
@@ -105,3 +112,5 @@ void SetDataProvider(WebApplicationBuilder webApplicationBuilder)
         return null;
     }
 }
+
+#endregion

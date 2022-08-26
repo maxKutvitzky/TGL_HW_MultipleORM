@@ -3,39 +3,38 @@ using MultipleORM.Bll.Interfaces.IServices;
 using MultipleORM.Bll.Mappers;
 using MultipleORM.Dal.Interfaces.IRepository;
 
-namespace MultipleORM.Bll.Services
+namespace MultipleORM.Bll.Services;
+
+public class PuppyService : IPuppyService
 {
-    public class PuppyService : IPuppyService
+    private readonly IPuppyRepository _repository;
+
+    public PuppyService(IPuppyRepository repository)
     {
-        private readonly IPuppyRepository _repository;
+        _repository = repository;
+    }
+    public int Add(BllPuppy entity)
+    {
+        return _repository.Add(entity.ToPuppy());
+    }
 
-        public PuppyService(IPuppyRepository repository)
-        {
-            _repository = repository;
-        }
-        public int Add(BllPuppy entity)
-        {
-            return _repository.Add(entity.ToPuppy());
-        }
+    public int Update(BllPuppy entity)
+    {
+        return _repository.Update(entity.ToPuppy());
+    }
 
-        public int Update(BllPuppy entity)
-        {
-            return _repository.Update(entity.ToPuppy());
-        }
+    public int Delete(BllPuppy entity)
+    {
+        return _repository.Delete(entity.ToPuppy());
+    }
 
-        public int Delete(BllPuppy entity)
-        {
-            return _repository.Delete(entity.ToPuppy());
-        }
+    public BllPuppy GetById(int id)
+    {
+        return _repository.GetById(id).ToBllPuppy();
+    }
 
-        public BllPuppy GetById(int id)
-        {
-            return _repository.GetById(id).ToBllPuppy();
-        }
-
-        public IEnumerable<BllPuppy> GetAll()
-        {
-            return _repository.GetAll().Select(p => p.ToBllPuppy());
-        }
+    public IEnumerable<BllPuppy> GetAll()
+    {
+        return _repository.GetAll().Select(p => p.ToBllPuppy());
     }
 }

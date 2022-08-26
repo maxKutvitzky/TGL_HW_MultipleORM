@@ -5,5 +5,5 @@ namespace MultipleORM.Bll.Interfaces.IServices;
 
 public interface IColorService : IService<BllColor>
 {
-    
+
 }
