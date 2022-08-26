@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "Default": "Server=localhost; Database=PuppyDb_MORMs; TrustServerCertificate=True; Trusted_Connection=true"
+  }
+}
