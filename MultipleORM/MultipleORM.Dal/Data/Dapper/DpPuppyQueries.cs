@@ -20,12 +20,15 @@ namespace MultipleORM.Dal.Data.Dapper
         public override string Delete { get; } =
             @"DELETE FROM Puppies 
             WHERE Id = @Id";
-
+        //Filter in query execution
         public override string GetById { get; } =
-            @"SELECT FROM Puppies 
-            WHERE Id = @Id";
+            @"SELECT * FROM Puppies p
+            JOIN Colors c ON c.Id = p.ColorId
+            JOIN Breeds b ON b.Id = p.BreedId";
 
         public override string GetAll { get; } =
-            @"SELECT * FROM Puppies";
+            @"SELECT * FROM Puppies p
+            JOIN Colors c ON c.Id = p.ColorId
+            JOIN Breeds b ON b.Id = p.BreedId";
     }
 }

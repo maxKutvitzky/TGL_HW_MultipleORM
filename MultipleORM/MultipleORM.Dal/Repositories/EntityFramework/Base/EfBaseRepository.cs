@@ -7,8 +7,8 @@ namespace MultipleORM.Dal.Repositories.EntityFramework.Base
 {
     public abstract class EfBaseRepository<T> : IRepository<T> where T : EntityBase
     {
-        private readonly PuppyDbContext _dbContext;
-        private readonly DbSet<T> _dbSet;
+        protected readonly PuppyDbContext _dbContext;
+        protected readonly DbSet<T> _dbSet;
         protected EfBaseRepository(PuppyDbContext context)
         {
             _dbContext = context;
@@ -32,12 +32,12 @@ namespace MultipleORM.Dal.Repositories.EntityFramework.Base
             return _dbContext.SaveChanges();
         }
 
-        public T GetById(Guid id)
+        public virtual T GetById(int id)
         {
             return _dbSet.Find(id);
         }
 
-        public IEnumerable<T> GetAll()
+        public virtual IEnumerable<T> GetAll()
         {
             return _dbSet;
         }

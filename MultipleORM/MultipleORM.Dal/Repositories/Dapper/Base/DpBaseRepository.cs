@@ -10,7 +10,7 @@ namespace MultipleORM.Dal.Repositories.Dapper.Base
     {
         protected readonly string connectionString;
         
-        private readonly DpBaseQueries _queries = new Q();
+        protected readonly DpBaseQueries _queries = new Q();
         protected DpBaseRepository(string connString)
         {
             connectionString = connString;
@@ -43,7 +43,7 @@ namespace MultipleORM.Dal.Repositories.Dapper.Base
             }
         }
 
-        public T GetById(Guid id)
+        public virtual T GetById(int id)
         {
             using (var conn = new SqlConnection(connectionString))
             {
@@ -52,7 +52,7 @@ namespace MultipleORM.Dal.Repositories.Dapper.Base
             }
         }
 
-        public IEnumerable<T> GetAll()
+        public virtual IEnumerable<T> GetAll()
         {
             using (var conn = new SqlConnection(connectionString))
             {

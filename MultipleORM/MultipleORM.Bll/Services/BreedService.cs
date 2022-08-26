@@ -28,7 +28,7 @@ namespace MultipleORM.Bll.Services
             return _repository.Delete(entity.ToBreed());
         }
 
-        public BllBreed GetById(Guid id)
+        public BllBreed GetById(int id)
         {
             return _repository.GetById(id).ToBllBreed();
         }

@@ -8,8 +8,8 @@ namespace MultipleORM.Dal.Interfaces.Entities
         public int Age { get; set; }
         public double Weight { get; set; }
         public Color Color { get; set; }
-        public Guid ColorId { get; set; }
+        public int ColorId { get; set; }
         public Breed Breed { get; set; }
-        public Guid BreedId { get; set; }
+        public int BreedId { get; set; }
     }
 }

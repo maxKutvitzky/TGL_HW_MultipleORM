@@ -5,5 +5,5 @@ namespace MultipleORM.Dal.Interfaces.IRepository;
 
 public interface IPuppyRepository : IRepository<Puppy>
 {
-    
+
 }

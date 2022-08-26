@@ -18,11 +18,11 @@ namespace MultipleORM.Dal.Data.Dapper
             WHERE Id = @Id";
 
         public override string GetById { get; } =
-            @"SELECT FROM Colors 
+            @"SELECT * FROM Colors 
             WHERE Id = @Id";
 
         public override string GetAll { get; } =
             @"SELECT * FROM Colors";
     }
 }
-}
+

@@ -1,5 +1,5 @@
 ﻿using MultipleORM.Bll.Interfaces.Entities;
-using MultipleORM.Bll.Interfaces.IServices.Base;
+using MultipleORM.Bll.Interfaces.IServices;
 using MultipleORM.Bll.Mappers;
 using MultipleORM.Dal.Interfaces.IRepository;
 
@@ -28,7 +28,7 @@ namespace MultipleORM.Bll.Services
             return _repository.Delete(entity.ToColor());
         }
 
-        public BllColor GetById(Guid id)
+        public BllColor GetById(int id)
         {
             return _repository.GetById(id).ToBllColor();
         }

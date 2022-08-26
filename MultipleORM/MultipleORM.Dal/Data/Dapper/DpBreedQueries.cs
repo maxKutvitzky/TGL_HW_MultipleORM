@@ -18,7 +18,7 @@ namespace MultipleORM.Dal.Data.Dapper
             WHERE Id = @Id";
 
         public override string GetById { get; } =
-            @"SELECT FROM Breeds 
+            @"SELECT * FROM Breeds 
             WHERE Id = @Id";
 
         public override string GetAll { get; } =

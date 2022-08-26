@@ -25,10 +25,10 @@ namespace MultipleORM.Bll.Services
 
         public int Delete(BllPuppy entity)
         {
-            return _repository.Update(entity.ToPuppy());
+            return _repository.Delete(entity.ToPuppy());
         }
 
-        public BllPuppy GetById(Guid id)
+        public BllPuppy GetById(int id)
         {
             return _repository.GetById(id).ToBllPuppy();
         }

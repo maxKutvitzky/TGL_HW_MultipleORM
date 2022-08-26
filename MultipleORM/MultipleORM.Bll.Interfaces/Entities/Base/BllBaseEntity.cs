@@ -8,6 +8,6 @@ namespace MultipleORM.Bll.Interfaces.Entities.Base
 {
     public abstract class BllBaseEntity
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
     }
 }
